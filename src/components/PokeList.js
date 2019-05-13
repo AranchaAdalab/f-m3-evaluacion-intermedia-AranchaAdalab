@@ -5,17 +5,17 @@ import {pokemon} from '../App';
 class PokeList extends React.Component {
     render() {
         return (
-            <ul>
+            <ul className="pokemonList">
                 {pokemon.map(pokemon => {
                     return (
-                        <li>
+                        <li className="App">
                             <Pokemon
                                 key={pokemon.id}
                                 name={pokemon.name}
                                 photo={pokemon.url}
                                 types={pokemon.types.map(pokemonType => {
                                     return (
-                                        <li>{pokemonType}</li>
+                                        <li className="pokemonTypes">{pokemonType}</li>
                                     )
                                 })}
                             />
