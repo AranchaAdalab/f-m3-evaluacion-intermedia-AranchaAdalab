@@ -13,7 +13,11 @@ class PokeList extends React.Component {
                                 key={pokemon.id}
                                 name={pokemon.name}
                                 photo={pokemon.url}
-                                types={pokemon.types}
+                                types={pokemon.types.map(pokemonType => {
+                                    return (
+                                        <li>{pokemonType}</li>
+                                    )
+                                })}
                             />
                         </li>
                     )
