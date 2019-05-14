@@ -14,3 +14,18 @@ class Pokemon extends React.Component {
 
   export default Pokemon;
 
+  //con destructuring
+
+  // class Pokemon extends React.Component {
+  //   render() {
+  //     const {name, photo, types} = this.props;
+  //     return (
+  //       <div>
+  //           <img src={photo} className="App-logo" alt="logo" />
+  //           <p className="name">{name}</p>
+  //           <ul className="types">{types}</ul>
+  //       </div>
+  //     );
+  //   }
+  // }
+
