@@ -1,0 +1,15 @@
+.pokemonTypes {
+    list-style: none;
+    background-color: lightskyblue;
+    margin: 10px;
+}
+  
+.types {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+  
+.photo {
+    width: 75px;
+}

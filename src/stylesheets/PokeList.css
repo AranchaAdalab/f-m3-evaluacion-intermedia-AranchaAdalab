@@ -1,0 +1,11 @@
+.pokemonList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemonItem {
+    text-align: center;
+    border: solid 1px black;
+    margin: 5px;
+}
