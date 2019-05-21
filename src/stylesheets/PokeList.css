@@ -1,0 +1,16 @@
+.pokemonList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemonItem {
+    border: solid 1px black;
+    border-radius: 3px;
+    margin: 5px;
+    width: 130px;
+}
+
+.pokemonFav {
+    background-color: rgb(170, 243, 170);
+}

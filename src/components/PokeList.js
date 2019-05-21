@@ -1,23 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
-import {pokemon} from '../App';
+import '../stylesheets/PokeList.css';
 
 class PokeList extends React.Component {
     render() {
         return (
-            <ul>
-                {pokemon.map(pokemon => {
+            <ul className="pokemonList">
+                {this.props.pokemon.map(poke => {
                     return (
-                        <li>
+                        <li className={`pokemonItem ${this.props.favPokemon.includes(poke.id) ? 'pokemonFav' : 'anything'}`} id={poke.id} key={poke.id} onClick={this.props.actionToFav}>
                             <Pokemon
-                                key={pokemon.id}
-                                name={pokemon.name}
-                                photo={pokemon.url}
-                                types={pokemon.types.map(pokemonType => {
-                                    return (
-                                        <li>{pokemonType}</li>
-                                    )
-                                })}
+                                name={poke.name}
+                                photo={poke.url}
+                                types={poke.types}
                             />
                         </li>
                     )
@@ -26,5 +22,9 @@ class PokeList extends React.Component {
         )
     }
 }
+
+PokeList.propTypes = {
+    pokemon: PropTypes.array
+};
 
 export default PokeList;
