@@ -4,11 +4,36 @@ import PokeList from './components/PokeList';
 import {pokemon} from './components/PokeArray';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pokemon: pokemon,
+      favPokemon: []
+    }
+    this.handleClickFav = this.handleClickFav.bind(this);
+  }
+
+  handleClickFav(event) {
+    const gilty = parseInt(event.currentTarget.id);
+    this.setState((prevState) => {
+      if (prevState.favPokemon.indexOf(gilty) < 0) {
+        const newFavorites = [...prevState.favPokemon, gilty]
+        return(
+          {favPokemon: newFavorites}
+        )
+      } else {
+        return (
+          {favPokemon: prevState.favPokemon.splice(gilty, 1)}
+        )
+      }
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Mi lista de Pokémon</h1>
-        <PokeList pokemon={pokemon}/>
+        <PokeList pokemon={this.state.pokemon} favPokemon={this.state.favPokemon} actionToFav={this.handleClickFav} />
       </div>
     );
   }

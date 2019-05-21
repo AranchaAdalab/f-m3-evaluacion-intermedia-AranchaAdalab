@@ -7,13 +7,13 @@ class PokeList extends React.Component {
     render() {
         return (
             <ul className="pokemonList">
-                {this.props.pokemon.map(pokemon => {
+                {this.props.pokemon.map(poke => {
                     return (
-                        <li className="pokemonItem" key={pokemon.id}>
+                        <li className={`pokemonItem ${this.props.favPokemon.includes(poke.id) ? 'pokemonFav' : 'anything'}`} id={poke.id} key={poke.id} onClick={this.props.actionToFav}>
                             <Pokemon
-                                name={pokemon.name}
-                                photo={pokemon.url}
-                                types={pokemon.types}
+                                name={poke.name}
+                                photo={poke.url}
+                                types={poke.types}
                             />
                         </li>
                     )
