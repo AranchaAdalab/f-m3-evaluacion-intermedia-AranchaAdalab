@@ -23,7 +23,7 @@ class App extends React.Component {
         )
       } else {
         return (
-          {favPokemon: prevState.favPokemon.splice(gilty, 1)}
+          {favPokemon: prevState.favPokemon.filter(item => item !== gilty)}
         )
       }
     })
